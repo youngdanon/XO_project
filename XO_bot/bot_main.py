@@ -73,9 +73,9 @@ def game(call):
                     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                           text="<b>Игра окончена</b>\nВыиграл <b>{}</b>\n{}\n{}\n{}".format(
                                               variables.character[character_id],
-                                              variables.field[call.message.chat.id][0],
-                                              variables.field[call.message.chat.id][1],
-                                              variables.field[call.message.chat.id][2]),
+                                              ' '.join(variables.field[call.message.chat.id][0]),
+                                              ' '.join(variables.field[call.message.chat.id][1]),
+                                              ' '.join(variables.field[call.message.chat.id][2])),
                                           parse_mode="html", reply_markup=win_markup)
                 elif XO_logic.tie_checker(variables.field_pos[call.message.chat.id]):
                     tie_markup = types.InlineKeyboardMarkup(row_width=1)
@@ -84,9 +84,9 @@ def game(call):
 
                     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                           text="<b>Ничья</b>\n{}\n{}\n{}".format(
-                                              variables.field[call.message.chat.id][0],
-                                              variables.field[call.message.chat.id][1],
-                                              variables.field[call.message.chat.id][2]),
+                                              ' '.join(variables.field[call.message.chat.id][0]),
+                                              ' '.join(variables.field[call.message.chat.id][1]),
+                                              ' '.join(variables.field[call.message.chat.id][2])),
                                           parse_mode="html", reply_markup=tie_markup)
                 else:
                     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
