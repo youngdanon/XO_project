@@ -71,7 +71,7 @@ def game(call):
                     win_markup_item = types.InlineKeyboardButton("Начать заново", callback_data='start')
                     win_markup.add(win_markup_item)
                     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                          text="<b>Игра окончена</b>\nВыиграл <b>{}</b>\n{}\n{}\n{}".format(
+                                          text="<b>Игра окончена</b>\nВыиграл <b>{}</b>\n\n{}\n{}\n{}".format(
                                               variables.character[character_id],
                                               ' '.join(variables.field[call.message.chat.id][0]),
                                               ' '.join(variables.field[call.message.chat.id][1]),
@@ -83,7 +83,7 @@ def game(call):
                     tie_markup.add(tie_markup_item)
 
                     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                          text="<b>Ничья</b>\n{}\n{}\n{}".format(
+                                          text="<b>Ничья</b>\n\n{}\n{}\n{}".format(
                                               ' '.join(variables.field[call.message.chat.id][0]),
                                               ' '.join(variables.field[call.message.chat.id][1]),
                                               ' '.join(variables.field[call.message.chat.id][2])),

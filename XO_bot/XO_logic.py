@@ -43,5 +43,5 @@ def tie_checker(field_visited):
 def restarting(chat_id):
     variables.filler_symbol.update({chat_id: [" " for i in range(9)]})
     variables.step_counter.update({chat_id: 0})
-    variables.field.update({chat_id: [["◻️" for i in range(3)] for i in range(3)]})
+    variables.field.update({chat_id: [[variables.blank_filler for i in range(3)] for i in range(3)]})
     variables.field_pos.update({chat_id: [[0 for i in range(3)] for i in range(3)]})
